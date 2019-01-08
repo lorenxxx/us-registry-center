@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: us-registry-center
+
+server:
+  port: 1000
+  servlet:
+    context-path: /registry
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/${spring.application.name}/eureka/
+
+
+
+
+
